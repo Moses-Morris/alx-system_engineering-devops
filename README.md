@@ -1,2 +1,1 @@
-#!/bin/bash
-pwd
+This is my First Script
