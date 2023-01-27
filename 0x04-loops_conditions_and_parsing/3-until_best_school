@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# Print ten times use the until loop (for and while are forbidden)
+
+loop=0
+until [ $loop -eq 10 ]
+do
+echo "Best School"
+(( loop++ ))
+done
