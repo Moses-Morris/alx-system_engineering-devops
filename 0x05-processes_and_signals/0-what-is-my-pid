@@ -1,2 +1,4 @@
 #!/usr/bin/env bash
+# The script gets the process id
+
 echo $$
