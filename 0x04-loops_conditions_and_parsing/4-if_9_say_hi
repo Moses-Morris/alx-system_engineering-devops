@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+#loop until a point
+
+loop=0
+while [ $loop -lt 10 ]
+do
+if [ $loop -eq 9 ]
+then
+echo "Hi"
+fi
+echo "Best School"
+(( loop++ ))
+done
