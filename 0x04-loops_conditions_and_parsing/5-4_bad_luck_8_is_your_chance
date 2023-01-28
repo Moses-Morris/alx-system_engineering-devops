@@ -3,17 +3,17 @@
 #prints bad luck , good luck and Best School
 #uses elif and while
 
-loop=0
-while [ $loop -lt 10 ]
+loop=1
+while [ $loop -lt 11 ]
 do
-if [ $loop -eq 3 ]
+if [ $loop -eq 4 ]
 then
 echo "bad luck"
-elif [ $loop -eq 7 ]
+elif [ $loop -eq 8 ]
 then
-echo "Good luck"
+echo "good luck"
 else
 echo "Best School"
 fi
-let loop=loop+1
+(( loop++))
 done
