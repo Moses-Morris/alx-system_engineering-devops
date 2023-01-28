@@ -1,0 +1,30 @@
+!#/usr/bin/env bash
+#loop upto 1 to 20
+#display displays 4 and then bad luck from China for the 4th loop iteration
+#displays 9 and then bad luck from Japan for the 9th loop iteration
+#displays 17 and then bad luck from Italy for the 17th loop iteration
+#use while and case
+
+min_num=1
+while [ $min_num -lt 21 ]
+do
+case $min_num in
+4)
+echo "$min_num"
+echo "bad luck from China"
+;;
+9)
+echo "$min_num"
+echo "bad luck from Japan"
+;;
+17)
+echo "$min_num"
+echo "bad luck from Italy"
+;;
+*)
+echo "$min_num"
+;;
+esac
+(( min_num++ ))
+done
+
