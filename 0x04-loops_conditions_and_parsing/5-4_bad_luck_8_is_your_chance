@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+#This script loops through and multiplies a word
+#prints bad luck , good luck and Best School
+#uses elif and while
+
+loop=0
+while [ $loop -lt 10 ]
+do
+if [ $loop -eq 3 ]
+then
+echo "bad luck"
+elif [ $loop -eq 7 ]
+then
+echo "Good luck"
+else
+echo "Best School"
+fi
+let loop=loop+1
+done
