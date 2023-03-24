@@ -1,5 +1,7 @@
-#create a puppet instruction set to install a package
+#create a puppet instruction to installl a version of a product.
+# Install a package
 package { 'flask':
-  ensure   => installed,
-  version => '2.1.0',
+  ensure   => '2.1.0',
+  provider => 'pip3',
 }
+
