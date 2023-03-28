@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+#A script that configure our ubuntu server to respect our arguments.
+#look for output  in the nginx /var/www/html/index.nginx-debian.html
+#check if nginx is listening to a port
+
+sudo apt-get update
+sudo apt-get -y install nginx
+echo "Hello World!" | sudo tee /var/www/html/index.nginx-debian.html
+sudo ss -lnpt | grep ":80"
+cat /var/www/html/index.nginx-debian.html 
