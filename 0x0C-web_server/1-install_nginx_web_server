@@ -3,8 +3,14 @@
 #look for output  in the nginx /var/www/html/index.nginx-debian.html
 #check if nginx is listening to a port
 
-sudo apt-get update
+sudo apt-get -y update
 sudo apt-get -y install nginx
-echo "Hello World!" | sudo tee /var/www/html/index.nginx-debian.html
+
+# Check if Nginx is listening on port 80
 sudo ss -lnpt | grep ':80'
-cat /var/www/html/index.nginx-debian.html 
+
+echo 'Hello World!' | sudo tee /var/www/html/index.nginx-debian.html
+sudo service nginx start
+
+# Check if the index file contains the expected message
+cat /var/www/html/index.nginx-debian.html
