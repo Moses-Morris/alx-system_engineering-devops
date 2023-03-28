@@ -4,23 +4,28 @@
 apt-get update
 apt-get install -y nginx
 
-touch /var/www/html/index.html /var/www/html/404.html
-echo "Hello World!" > /var/www/html/index.html
-echo "Ceci n'est pas une page" > /var/www/html/404.html
+#touch /var/www/html/index.html /var/www/html/404.html
+#echo "Hello World!" > /var/www/html/index.html
+#echo "Ceci n'est pas une page" > /var/www/html/404.html
 
-printf %s "server {
-    listen 80;
-    listen [::]:80 default_server;
-    root   root   /var/www/html/;
-    index  index.html index.htm;
-    location /redirect_me {
-        return 301 https://www.youtube.com/watch?v=TfgBHC5gvTI;
-    }
-    error_page 404 /404.html;
-    location /404 {
-        root /var/www/html/;
-        internal;
-    }
-}" > /etc/nginx/sites-available/default
+#printf %s "server {
+#    listen 80;
+#    listen [::]:80 default_server;
+#    root   root   /var/www/html/;
+#    index  index.html index.htm;
+#    location /redirect_me {
+#        return 301 https://www.youtube.com/watch?v=TfgBHC5gvTI;
+#    }
+#    error_page 404 /404.html;
+#    location /404 {
+#       root /var/www/html/;
+#        internal;
+#    }
+#}" > /etc/nginx/sites-available/default
+
+# code to create error page and add a redirect for error 404
+echo "Ceci n'est pas une page" | sudo tee /var/www/html/404.html
+string_for_replacement="listen 80 default_server;\n\terror_page 404 \/404.html;\n\tlocation = \/404.html {\n\t\troot \/var\/www\/html;\n\t\tinternal;\n\t}"
+sudo sed -i "s/listen 80 default_server;/$string_for_replacement/" /etc/nginx/sites-enabled/default
 
 service nginx restart
