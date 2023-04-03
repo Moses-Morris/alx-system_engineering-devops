@@ -1,0 +1,11 @@
+#How a config HAProxy file is : at etc/haproxy/haproxy.cfg
+default
+	mode http
+	timeout client 5000
+frontend server
+	bind *:80 
+	default_backend mybackendservers
+backend mybackendservers
+	server 131381-web-01 54.81.103.179 check
+	server 131381-web-02 34.234.201.190 check
+
