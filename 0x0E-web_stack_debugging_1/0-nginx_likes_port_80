@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# a Bash script with the minimum number of commands to automate your fix.
+
+# Remove existing file that has wrong configurarions about the port
+sudo rm /etc/nginx/sites-enabled/default
+
+# link the default file in sites available with sites enabled
+sudo ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/
+
+# restart nginx web server
+sudo service nginx restart
