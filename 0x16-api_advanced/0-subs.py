@@ -1,8 +1,7 @@
 #!/usr/bin/python3
 """ module for function to return number of subreddit subscribers """
-import requests
+import requests, json
 import sys
-import json
 
 def number_of_subscribers(subreddit):
     """  Args:
